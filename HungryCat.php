@@ -15,9 +15,9 @@ class HungryCat {
 		$defaultExpression = "Голодный кот " . $this->getName() . ", особые приметы: цвет - " . $this->getColor() . ", съел " . $food;
 
 		if($food === $this->getFavouriteFood())
-			echo $defaultExpression . " и замурчал 'мррррр' от своей любимой еды";
+			echo $defaultExpression . " и замурчал 'мррррр' от своей любимой еды </br>";
 		else
-			echo $defaultExpression;
+			echo $defaultExpression . " </br>";
 	}
 
 	public function getName() {
@@ -33,8 +33,8 @@ class HungryCat {
 	}
 }
 
-$cat1 = new Cat("Матроскин", "серый", "молоко");
-$cat2 = new Cat("Васька", "белый", "рыба");
+$cat1 = new HungryCat("Матроскин", "серый", "молоко");
+$cat2 = new HungryCat("Васька", "белый", "рыба");
 
 $cat1->eat("рыба");
 $cat1->eat("колбаса");
