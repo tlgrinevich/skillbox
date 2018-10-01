@@ -1,36 +1,43 @@
 <?php
 
-class HungryCat {
-	public $name;
-	public $color;
-	public $favouriteFood;
+class HungryCat
+{
+    public $name;
+    public $color;
+    public $favouriteFood;
 
-	public function __construct($name, $color, $food) {
-		$this->name = $name;
-		$this->color = $color;
-		$this->favouriteFood = $food;
-	}
+    public function __construct($name, $color, $food)
+    {
+        $this->name = $name;
+        $this->color = $color;
+        $this->favouriteFood = $food;
+    }
 
-	public function eat($food) {
-		$defaultExpression = "Голодный кот " . $this->getName() . ", особые приметы: цвет - " . $this->getColor() . ", съел " . $food;
+    public function eat($food)
+    {
+        $defaultExpression = "Голодный кот " . $this->getName() . ", особые приметы: цвет - " . $this->getColor() . ", съел " . $food;
 
-		if($food === $this->getFavouriteFood())
-			echo $defaultExpression . " и замурчал 'мррррр' от своей любимой еды </br>";
-		else
-			echo $defaultExpression . " </br>";
-	}
+        if ($food === $this->getFavouriteFood()) {
+            echo $defaultExpression . " и замурчал 'мррррр' от своей любимой еды </br>";
+        } else {
+            echo $defaultExpression . " </br>";
+        }
+    }
 
-	public function getName() {
-		return $this->name;
-	}
+    public function getName()
+    {
+        return $this->name;
+    }
 
-	public function getColor() {
-		return $this->color;
-	}
+    public function getColor()
+    {
+        return $this->color;
+    }
 
-	public function getFavouriteFood() {
-		return $this->favouriteFood;
-	}
+    public function getFavouriteFood()
+    {
+        return $this->favouriteFood;
+    }
 }
 
 $cat1 = new HungryCat("Матроскин", "серый", "молоко");

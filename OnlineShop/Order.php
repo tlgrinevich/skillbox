@@ -2,19 +2,23 @@
 
 namespace OnlineShop;
 
-class Order {
+class Order
+{
 
-	private $basket;
+    private $basket;
 
-	public function __construct($basket) {
-		$this->basket = $basket;
-	}
+    public function __construct($basket)
+    {
+        $this->basket = $basket;
+    }
 
-	public function getBasket() {
-		return $this->basket;
-	}
+    public function getBasket()
+    {
+        return $this->basket;
+    }
 
-	public function getPrice() {
+    public function getPrice()
+    {
 
-	}
+    }
 }

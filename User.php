@@ -1,52 +1,56 @@
 <?php
 
-class User {
+class User
+{
 
-	private $fullName;
-	private $email;
+    private $fullName;
+    private $email;
 
-	private $gender;
-	private $age;
-	private $phone;
+    private $gender;
+    private $age;
+    private $phone;
 
-	public function __construct($fullName, $email, $gender = null, $age = null, $phone = null) {
-		$this->fullName = $fullName;
-		$this->email = $email;
+    public function __construct($fullName, $email, $gender = null, $age = null, $phone = null)
+    {
+        $this->fullName = $fullName;
+        $this->email = $email;
 
-		$this->gender = $gender;
-		$this->age = $age;
-		$this->phone = $phone;
-	}
+        $this->gender = $gender;
+        $this->age = $age;
+        $this->phone = $phone;
+    }
 
-	private function send($message, $name, $chanel = null) {
-		echo "Уведомление клиенту: " . $name . "на " . $chanel . ": " . $message . "</br>";
-	}
+    private function send($message, $name, $channel = null)
+    {
+        echo "Уведомление клиенту: " . $name . "на " . $channel . ": " . $message . "</br>";
+    }
 
-	public function notifyOnEMail($message) {
-		$this->send($message, $this->fullName, 'email');
-	}
+    public function notifyOnEMail($message)
+    {
+        $this->send($message, $this->fullName, 'email');
+    }
 
-	public function notifyOnPhone($message) {
-		$this->send($message, $this->fullName, 'телефон');
-	}
+    public function notifyOnPhone($message)
+    {
+        $this->send($message, $this->fullName, 'телефон');
+    }
 
-	public function notify($message) {
-		if($this->age !== null && $this->age < 18) {
-			$this->notifyOnEMail($this->censor($message));
+    public function notify($message)
+    {
+        if ($this->age !== null && $this->age < 18) {
+            $message = $this->censor($message);
+        }
 
-			if($this->phone !== null)
-				$this->notifyOnPhone($this->censor($message));
-		} else {
-			$this->notifyOnEMail($message);
+        $this->notifyOnEMail($message);
+        if ($this->phone !== null) {
+            $this->notifyOnPhone($this->censor($message));
+        }
+    }
 
-			if($this->phone !== null)
-				$this->notifyOnPhone($message);
-		}
-	}
-
-	private function censor($message) {
-		return str_replace("плохое слово", "хорошее слово", $message);
-	}
+    private function censor($message)
+    {
+        return str_replace("плохое слово", "хорошее слово", $message);
+    }
 
 }
 
