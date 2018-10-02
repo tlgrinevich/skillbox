@@ -16,9 +16,9 @@ class User
         return $this->name;
     }
 
-    public function notify($order)
+    public function notify(Order $order)
     {
         $order->getBasket()->describe();
-        return "Дорогой " . $this->getName() . "! Для вас создан заказ на сумму " . $order->getBasket()->getPrice() . "$ </br>";
+        return "Дорогой " . $this->getName() . "! Для вас создан заказ на сумму " . $order->getPrice() . "$ </br>";
     }
 }

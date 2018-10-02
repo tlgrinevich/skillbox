@@ -19,6 +19,6 @@ class Order
 
     public function getPrice()
     {
-
+        return $this->basket->getPrice();
     }
 }

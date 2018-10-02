@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class User
 {
 
@@ -18,6 +20,11 @@ class User
         $this->gender = $gender;
         $this->age = $age;
         $this->phone = $phone;
+    }
+
+    public function getName()
+    {
+        return $this->fullName;
     }
 
     private function send($message, $name, $channel = null)
