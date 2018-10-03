@@ -60,9 +60,9 @@ class User
     }
 
 }
-
-$user1 = new User("Гриневич В. И.", "grinevich@transloyd.com");
-$user1->notify("Привет");
-
-$user1 = new User("Петров С. К.", "petrovich@gmail.com", "мужик", 40, "+380952221100");
-$user1->notify("Привет, плохое слово");
+//
+//$user1 = new User("Гриневич В. И.", "grinevich@transloyd.com");
+//$user1->notify("Привет");
+//
+//$user1 = new User("Петров С. К.", "petrovich@gmail.com", "мужик", 40, "+380952221100");
+//$user1->notify("Привет, плохое слово");
