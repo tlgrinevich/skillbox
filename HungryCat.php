@@ -19,9 +19,10 @@ class HungryCat
 
         if ($food === $this->getFavouriteFood()) {
             echo $defaultExpression . " и замурчал 'мррррр' от своей любимой еды </br>";
-        } else {
-            echo $defaultExpression . " </br>";
+            return;
         }
+
+        echo $defaultExpression . " </br>";
     }
 
     public function getName()

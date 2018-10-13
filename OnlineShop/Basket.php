@@ -26,10 +26,13 @@ class Basket
 
     public function describe()
     {
-        echo "ИНФОРМАЦИЯ О КОРЗИНЕ: </br>";
+        $result = "ИНФОРМАЦИЯ О КОРЗИНЕ: </br>";
+
         foreach ($this->basket as $key => $value) {
-            echo $value['product']->getName() . " - " . $value['product']->getPrice() . ". Кол-во: " . $value['quantity'] . "</br>";
+            $result .= $value['product']->getName() . " - " . $value['product']->getPrice() . ". Кол-во: " . $value['quantity'] . "</br>";
         }
-        echo "Общая цена: " . $this->getPrice() . "</br>";
+        $result .= "Общая цена: " . $this->getPrice() . "</br>";
+
+        return $result;
     }
 }

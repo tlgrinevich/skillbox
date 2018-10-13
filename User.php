@@ -50,7 +50,7 @@ class User
 
         $this->notifyOnEMail($message);
         if ($this->phone !== null) {
-            $this->notifyOnPhone($this->censor($message));
+            $this->notifyOnPhone($message);
         }
     }
 
